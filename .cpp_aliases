@@ -1,0 +1,4 @@
+alias m="make -j4"
+alias mc="m clean"
+alias mt="m ; m test"
+alias c="cmake .."
