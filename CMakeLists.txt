@@ -23,10 +23,13 @@
 cmake_minimum_required(VERSION 2.8)
 project(poco_http_server)
 
+# Need to define where our FindPoco.cmake files is going to be
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/)
 
+# Setup a couple of compiler flags
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -std=c++11")
+# Boost locations
 find_package(Boost 1.4 COMPONENTS unit_test_framework)
-enable_testing()
 
 find_package(Poco)
 if (NOT ${Poco_FOUND})

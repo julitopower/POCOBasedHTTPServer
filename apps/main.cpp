@@ -25,7 +25,6 @@
 #include <BasicHandler.hpp>
 
 #include <Poco/ThreadPool.h>
-#include <Poco/Util/ServerApplication.h>
 
 #include <iostream>
 #include <string>
@@ -42,7 +41,7 @@ int main(int argc, char** argv) {
   // Need a ThreadPool
   Poco::ThreadPool pool;
 
-  // Ned HTTPServerParams::Ptr
+  // Need HTTPServerParams::Ptr
   HTTPServerParams::Ptr pParams(new HTTPServerParams());
   HTTPServer server(factory, pool,  ss, pParams);
   server.start();

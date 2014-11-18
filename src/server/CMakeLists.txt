@@ -20,10 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-set(lib_headers ../../include/HandlerFactory.hpp
-  ../../include/BasicHandler.hpp
-  ../../include/PostRequestHandler.hpp)
 set(lib_src HandlerFactory.cpp BasicHandler.cpp PostRequestHandler.cpp)
 
-add_library(server ${lib_src} ${lib_headers})
+add_library(server ${lib_src})
 target_link_libraries(server PocoNet)
