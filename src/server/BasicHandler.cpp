@@ -26,16 +26,19 @@
 #include <Poco/Net/HTTPMessage.h>
 #include <iostream>
 
-server::BasicHandler::BasicHandler() : Poco::Net::HTTPRequestHandler() {}
+namespace server {
+BasicHandler::BasicHandler() : Poco::Net::HTTPRequestHandler() {}
 
-server::BasicHandler::~BasicHandler() {}
+BasicHandler::~BasicHandler() {}
 
-void server::BasicHandler::handleRequest( Poco::Net::HTTPServerRequest & request,
-					  Poco::Net::HTTPServerResponse & response) {
+void BasicHandler::handleRequest(Poco::Net::HTTPServerRequest & request,
+                                         Poco::Net::HTTPServerResponse & response) {
   std::cout << "Received Request!" << std::endl;
 
   response.setContentType("text/txt");
   response.setStatus(Poco::Net::HTTPResponse::HTTP_OK);
   std::ostream& os = response.send();
-  os << "12345 this is all pretty weird" << std::endl;
+  os << "Server reponse" << std::endl;
 }
+
+} //server

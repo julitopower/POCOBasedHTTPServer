@@ -46,8 +46,9 @@ int main(int argc, char** argv) {
   HTTPServer server(factory, pool,  ss, pParams);
   server.start();
 
+  // This is a bit of a hack to have the server running until a key is pressed
   std::string s;
   std::cin >> s;
-  
+
   server.stop();
 }
